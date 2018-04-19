@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div id="default-template">
     <nuxt/>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
+// import Vue from 'vue';
 // import BootstrapVue from 'bootstrap-vue';
 // Vue.use(BootstrapVue);
 // 首先引入bootstrap.css文件，加载bootstrap样式
@@ -14,6 +14,14 @@ import Vue from 'vue';
 // import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 export default {
+
  
 }
 </script>
+<style>
+body{
+  padding-top: 56px;
+  min-width: 768px;
+  font-size: 17px;
+}
+</style>

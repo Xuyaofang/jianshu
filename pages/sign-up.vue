@@ -1,6 +1,84 @@
 <template>
-  <div class="">
-      注册
+  <div class="sign">
+    <!-- logo -->
+    <div class="logo">
+      <nuxt-link to="/">
+        <img src="~/assets/img/logo.png" alt="">
+      </nuxt-link>
+    </div>
+    <!-- 主体部分 -->
+    <div class="main">
+      <!-- title -->
+      <div class="title">
+        <h4>
+          <nuxt-link to="/sign-in">
+            登录
+          </nuxt-link>
+          <b>·</b>
+          <nuxt-link class="active" to="/sign-up">
+            注册
+          </nuxt-link>
+        </h4>
+      </div>
+      <!-- form表单 -->
+      <div class="js-form">
+        <form method="post">
+          <div class="input-prepend">
+            <input type="text" placeholder="你的昵称">
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="input-prepend">
+            <input type="text" placeholder="手机号">
+            <i class="fa fa-phone"></i>
+          </div>
+          <div class="input-prepend ssm">
+            <input type="text" placeholder="手机验证码">
+            <i class="fa fa-shield"></i>
+            <a href="#" class="send-ssm">发送验证码</a>
+          </div>
+          <div class="input-prepend">
+            <input type="password" placeholder="设置密码">
+            <i class="fa fa-lock"></i>
+          </div>
+          <button class="sign-up-btn">注册</button>
+          <!-- <input type="button" class="" value="登录"> -->
+          <p class="sign-up-msg">
+            点击 “注册” 即表示您同意并愿意遵守简书<br>
+            用户协议 和 隐私政策 。
+          </p>
+        </form>
+      </div>
+      <!-- 第三方的登录 -->
+      <div class="more-sign">
+        <p class="">
+          <!-- <span><hr></span> -->
+          社交账号登录
+          <!-- <span><hr></span> -->
+        </p>
+        <ul>
+          <li class="weixin">
+            <nuxt-link to="/">
+              <i class="fa fa-weixin"></i>
+            </nuxt-link>
+          </li>
+          <li class="weibo">
+            <nuxt-link to="/">
+              <i class="fa fa-weibo"></i>
+            </nuxt-link>
+          </li>
+          <li class="qq">
+            <nuxt-link to="/">
+              <i class="fa fa-qq"></i>
+            </nuxt-link>
+          </li>
+          <!-- <li>
+            <nuxt-link to="/">
+              其它
+            </nuxt-link>
+          </li> -->
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 <script>

@@ -15,7 +15,7 @@
             登录
           </nuxt-link>
           <b>·</b>
-          <nuxt-link class="" to="/sign-in">
+          <nuxt-link class="" to="/sign-up">
             注册
           </nuxt-link>
         </h4>
@@ -27,8 +27,8 @@
             <input type="text" placeholder="手机号或邮箱">
             <i class="fa fa-user"></i>
           </div>
-          <div class="input-prepend">
-            <input type="password" class="input-prepend" placeholder="密码">
+          <div class="input-prepend input-password">
+            <input type="password" placeholder="密码">
             <i class="fa fa-lock"></i>
           </div>
           <div class="remember">
@@ -38,36 +38,39 @@
           <nuxt-link class="help" to="/">
             登录遇到问题？
           </nuxt-link>
-          <button class="btn btn-primary">登录</button>
+          <!-- <button class="btn btn-primary">登录</button> -->
+          <button class="sign-in-btn">登录</button>
           <!-- <input type="button" class="" value="登录"> -->
         </form>
       </div>
       <!-- 第三方的登录 -->
       <div class="more-sign">
         <p class="">
+          <!-- <span><hr></span> -->
           社交账号登录
+          <!-- <span><hr></span> -->
         </p>
         <ul>
-          <li>
+          <li class="weixin">
             <nuxt-link to="/">
               <i class="fa fa-weixin"></i>
             </nuxt-link>
           </li>
-          <li>
+          <li class="weibo">
             <nuxt-link to="/">
               <i class="fa fa-weibo"></i>
             </nuxt-link>
           </li>
-          <li>
+          <li class="qq">
             <nuxt-link to="/">
               <i class="fa fa-qq"></i>
             </nuxt-link>
           </li>
-          <li>
+          <!-- <li>
             <nuxt-link to="/">
               其它
             </nuxt-link>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

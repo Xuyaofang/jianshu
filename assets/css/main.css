@@ -1,5 +1,5 @@
 /************* 全局清除浏览器默认样式 ************/
-*{
+*,:after, :before{
     box-sizing: border-box;
 }
 html,body{
@@ -12,8 +12,12 @@ html,body{
     font-family: -apple-system,SF UI Display,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
     line-height: 1.5;
 }
-ul,ol,dl{
+body{
+    overflow-x: hidden;
+}
+ul,ol,dl,li{
     list-style: none;
+    padding: 0;
 }
 input,input:hover,input:active,input:focus{
     outline: none;
@@ -32,4 +36,17 @@ a{
 a:hover{
     color: #333;
     text-decoration: none;
+}
+
+#_nuxt{
+    height: 100%;
+}
+#_layout{
+    height: 100%;
+}
+#sign-template{
+    height: 100%;
+}
+#default-template{
+    height: 100%;
 }
