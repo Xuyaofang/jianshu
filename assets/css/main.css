@@ -18,8 +18,9 @@ body{
 ul,ol,dl,li{
     list-style: none;
     padding: 0;
+    /* margin: 0; */
 }
-input,input:hover,input:active,input:focus{
+input,input:hover,input:active,input:focus,button:focus{
     outline: none;
 }
 h1,h2,h3,h4,h5,h6{
@@ -49,4 +50,29 @@ a:hover{
 }
 #default-template{
     height: 100%;
+}
+
+/***********首页样式*******************/
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin: auto;
+}
+/* .container::after{
+    clear: both;
+    content: '';
+  height: 0;
+  display: block;
+  visibility: hidden;
+} */
+@media (min-width:996px){
+    .container{
+        width: 960px;
+    }
+}
+@media (min-width:1040px){
+    .container{
+        width: 750px;
+    }
 }

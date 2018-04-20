@@ -1,7 +1,7 @@
 <template>
   <div style="height:100%">
     <my-header></my-header>
-      最爱赵丽颖
+      我是主页
 
   </div>
 </template>
