@@ -58,6 +58,7 @@ a:hover{
     padding-right: 15px;
     margin-left: auto;
     margin: auto;
+    display: table;
 }
 /* .container::after{
     clear: both;
@@ -66,12 +67,14 @@ a:hover{
   display: block;
   visibility: hidden;
 } */
-@media (min-width:996px){
+/* 大于992px */
+@media(min-width:992px){
     .container{
         width: 960px;
     }
 }
-@media (min-width:1040px){
+/* 小于1080px */
+@media(max-width:1080px){
     .container{
         width: 750px;
     }
