@@ -47,14 +47,14 @@
                   </ul>
               </div><!-- 右上角  登录和注册 -->
               <!-- 导航部分 -->
-          
-              <div class="container">
+              <div class="top-container">
                 <div class="navbar-menu">
                   <button type="button" @click="menuShowHandle()">
                     <i class="fa fa-bars"></i>                   
                   </button>
-                </div>              
-                <!-- <transition name="menu-transition" enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp"> -->
+                </div>
+                <!-- <div class="container"> -->
+                  <!-- <div class="row"> -->
                   <ul class="nav-list">
                     <li>
                       <nuxt-link to="/" class="active">
@@ -97,6 +97,11 @@
                       </form>
                     </li>
                   </ul>
+
+                  <!-- </div> -->
+                <!-- </div>               -->
+                <!-- <transition name="menu-transition" enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp"> -->
+                  
                 <!-- </transition> -->
               </div> 
           </div>
@@ -139,6 +144,7 @@ export default {
 nav {
   width: 100%;
   height: 56px;
+  background-color: #fff;
 }
 .navbar {
   margin-bottom: 20px;
@@ -239,7 +245,7 @@ nav .user .drop-menu li a i {
   margin-right: 15px;
   color: #ea6f5a;
   font-size: 18px;
-  /* display: inline-block; */
+  display: inline-block;
 }
 nav .nav-list {
   margin: 0;
@@ -317,7 +323,7 @@ nav .nav-list .search form .search-input:focus ~ .search-btn {
   border-radius: 50%;
 }
 nav .nav-list .search form .search-btn i {
-  display: block !important;
+  display: inline-block !important;
   margin: 0;
   text-align: center;
   line-height: 30px;
@@ -405,7 +411,7 @@ nav .navbar-menu button:hover {
 }
 @media (min-width: 768px) {
   nav .nav-list {
-    display: block !important;
+    display: inline-block !important;
   }
 }
 /* .menu-transition-enter-active, .menu-transition-leave-active {
