@@ -90,27 +90,39 @@
             </div>
             <!-- 更多分享 -->
             <div class="meta-bottom">
-                <div class="like">
+                <div class="like" @click="isLike=!isLike" :class="[isLike?'likes':'']">
                     <div class="like-btn">
-                        <a href="#">喜欢</a>
+                        <a>喜欢</a>
                     </div>
                     <div class="like-num">
-                        <a href="#">50</a>
+                        <a>{{isLike?likes+1:likes}}</a>
                     </div>
                 </div>
                 <div class="share">
-                    <a href="#" class="share-btn">
+                    <a class="share-btn" v-tooltip="'分享到QQ'">
                         <i class="fa fa-qq qq"></i>
                     </a>
-                    <a href="#" class="share-btn">
+                    <a href="#" class="share-btn" @mouseover="weiboHover=true" @mouseleave="weiboHover=false">
                         <i class="fa fa-weibo weibo"></i>
                     </a>
-                    <a href="#" class="share-btn">
+                    <div class="tooltip" :class="{'weibo-hover':weiboHover}" v-show="weiboHover">分享到微博<span></span></div>
+                    <a href="#" class="share-btn" @mouseover="weixinHover=true" @mouseleave="weixinHover=false">
                         <i class="fa fa-weixin weixin"></i>
                     </a>
-                    <a href="#" class="share-btn more-share">
+                    <div class="tooltip" v-show="weixinHover" :class="{'weixin-hover':weixinHover}">分享到微信<span></span></div>
+                    <a class="share-btn more-share" @click="moreShareHoverHandle($event)">
                         更多分享
                     </a>
+                    <div v-show="moreShareHover" :class="{'more-share-hover':moreShareHover}">
+                        <ul>
+                            <li><i class="fa fa-star"></i><span>分享到QQ空间</span></li>
+                            <li><i class="fa fa-twitter"></i><span>分享到Twitter</span></li>
+                            <li><i class="fa fa-facebook-official"></i><span>分享到Facebook</span></li>
+                            <li><i class="fa fa-google-plus"></i><span>分享到Google+</span></li>
+                            <li><i class="fa fa-github"></i><span>分享到豆瓣</span></li>
+                        </ul>
+                        <span></span>
+                    </div>
                 </div>
             </div>
             <!-- 留言组件 -->
@@ -122,6 +134,9 @@
 <script>
 import myComment from "~/components/myComment";
 import myHeader from "~/components/myHeader";
+import Vue from "vue";
+import VTooltip from "v-tooltip";
+Vue.use(VTooltip);
 export default {
   head: {
     title: "简书文章详情页面-创作你的创作",
@@ -132,15 +147,112 @@ export default {
     ]
   },
   data() {
-    return {};
+    return {
+      isLike: false,
+      likes: 50,
+      qqHover: false,
+      weixinHover: false,
+      weiboHover: false,
+      moreShareHover: false
+    };
   },
   components: {
     myHeader,
     myComment
+  },
+  mounted() {
+    document.onclick = function() {
+      this.moreShareHover = false;
+    }.bind(this);
+  },
+  methods: {
+    moreShareHoverHandle(e) {
+      this.moreShareHover = true;
+      //   e.cancelBubble = true;
+      e.stopPropagation();
+    }
   }
 };
 </script>
 <style scoped>
-
+.share {
+  position: relative;
+}
+.share .tooltip {
+  position: absolute;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 25px;
+  border-radius: 5px;
+}
+.share .tooltip.qq-hover {
+  top: -40px;
+  left: -30px;
+}
+.share .tooltip.weibo-hover {
+  top: -40px;
+  left: 25px;
+}
+.share .tooltip.weixin-hover {
+  top: -40px;
+  left: 80px;
+}
+.share .tooltip > span {
+  position: absolute;
+  left: 54px;
+  top: 31px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid black;
+}
+.share .more-share-hover {
+  position: absolute;
+  font-size: 15px;
+  width: 150px;
+  top: -160px;
+  left: 140px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px;
+}
+.share .more-share-hover > span {
+  position: absolute;
+  left: 67px;
+  bottom: -10px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid lavenderblush;
+}
+.share .more-share-hover ul > li {
+  line-height: 2;
+  padding: 0 10px;
+}
+.share .more-share-hover ul > li:hover {
+  background: lightgray;
+}
+.share .more-share-hover ul > li .fa-star {
+  color: #eebf13;
+}
+.share .more-share-hover ul > li .fa-twitter {
+  color: #00aaec;
+}
+.share .more-share-hover ul > li .fa-facebook-official {
+  color: #4460a0;
+}
+.share .more-share-hover ul > li .fa-google-plus {
+  color: #f9402e;
+}
+.share .more-share-hover ul > li .fa-github {
+  color: #3f902d;
+}
+.share .more-share-hover ul > li span {
+  margin-left: 5px;
+}
 </style>
 

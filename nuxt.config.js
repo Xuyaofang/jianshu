@@ -13,6 +13,11 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  // 使用v-tooltip提示工具  ssr:禁止在服务端渲染
+  plugins: [
+    { src: '~/plugins/v-tooltip.min.js',ssr:false }
+  ],
   /*
   ** Global CSS
   */
@@ -35,5 +40,6 @@ module.exports = {
     //     })
     //   }
     // }
-  }
+  },
+ 
 }
